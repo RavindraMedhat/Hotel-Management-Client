@@ -1,0 +1,148 @@
+﻿@model IEnumerable<Hotel_Management_Client.ViewModel.HotelViewModelForIndex>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Hotels";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Rooms</title>
+    <!-- Add your CSS and other meta tags as needed -->
+    <style>
+        /* Your existing styles */
+
+        .rooms-section {
+            padding-top: 0;
+            padding-bottom: 80px;
+        }
+
+        .room-item {
+            margin-bottom: 30px;
+        }
+            .room-item img {
+                width: 100%;
+                height: contain; /* This ensures that the aspect ratio of the image is maintained */
+                display: block; /* This removes extra space below the image */
+            }
+
+            .room-item .ri-text {
+                border: 1px solid #ebebeb;
+                border-top: none;
+                padding: 24px 24px 30px 28px;
+            }
+
+                .room-item .ri-text h4 {
+                    color: #19191a;
+                    margin-bottom: 17px;
+                }
+
+                .room-item .ri-text h3 {
+                    color: #dfa974;
+                    font-weight: 700;
+                    margin-bottom: 14px;
+                }
+
+                    .room-item .ri-text h3 span {
+                        font-family: "Cabin", sans-serif;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #19191a;
+                    }
+
+                .room-item .ri-text table {
+                    margin-bottom: 18px;
+                }
+
+                    .room-item .ri-text table tbody tr td {
+                        font-size: 16px;
+                        color: #707079;
+                        line-height: 36px;
+                    }
+
+                        .room-item .ri-text table tbody tr td.r-o {
+                            width: 125px;
+                        }
+
+                .room-item .ri-text .primary-btn {
+                    color: #19191a;
+                }
+
+        .room-pagination {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+            .room-pagination a {
+                font-size: 16px;
+                color: #707079;
+                border: 1px solid #EFD4B9;
+                border-radius: 2px;
+                padding: 7px 13px 5px;
+                margin-right: 7px;
+                display: inline-block;
+                -webkit-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+            }
+
+                .room-pagination a:last-child {
+                    margin-right: 0;
+                }
+
+                .room-pagination a:hover {
+                    background: #dfa974;
+                    color: #ffffff;
+                }
+
+        /* Additional styles */
+
+        /* Add the provided CSS here */
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="rooms-section spad">
+        <div class="container">
+            <div class="row">
+                @foreach (var hotel in Model)
+                {
+                    var photopath = "" + (hotel.Image_URl[0]);
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="room-item">
+                            <img src="@photopath" alt="">
+                            <div class="ri-text">
+                                <h4>@hotel.Hotel_Name</h4>
+                                
+                                <a asp-controller="HotelBranch" asp-action="Index" asp-route-id="@hotel.Hotel_ID" asp-route-HotelName="@hotel.Hotel_Name" class="float-right">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+                <div class="col-lg-12">
+                    <div class="room-pagination">
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">Next <i class="fa fa-long-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Your existing HTML code -->
+    <!-- Add your scripts or additional HTML content here -->
+
+</body>
+
+</html>
