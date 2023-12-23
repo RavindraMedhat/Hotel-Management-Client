@@ -6,21 +6,29 @@
 }
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<div class="row">
-    @foreach (var hotel in Model)
-    {
-        var photopath = "" + (hotel.Image_URl[0]);
+<section class="rooms-section spad">
+    <div class="container">
+        <h1 style="text-align:center; color: #FFF; margin: 2rem 0rem;">@ViewBag.HotelName</h1>
+        <h2 style="text-align:center; color: #FFF; margin: 2rem 0rem;">Our Branches</h2>
+        <div class="row">
+            @foreach (var hotel in Model)
+            {
+                var photopath = "" + (hotel.Image_URl[0]);
 
-        <div class="col-md-4">
-            <div class="card m-3">
-                <a asp-controller="Room" asp-action="Index" asp-route-id="@hotel.Branch_ID" class="float-right">
-                    <div class="card-header">
-                        <h3>@hotel.Branch_Name</h3>
+                <div class="col-lg-4 col-md-6">
+                    <div class="room-item">
+                        <a asp-controller="Room" asp-action="Index" asp-route-id="@hotel.Branch_ID" asp-route-HotelName="@hotel.Branch_Name">
+                            <img src="@photopath" alt="">
+                        </a>
+                        <div class="ri-text">
+                            <h4>@hotel.Branch_Name</h4>
+                            <a asp-controller="Room" asp-action="Index" asp-route-id="@hotel.Branch_ID" asp-route-HotelName="@hotel.Branch_Name">More Details</a>
+                        </div>
                     </div>
-                    <img class="card-img-top card-body imageThumbnail" style="height:300px" src="@photopath" asp-append-version="true" />
-                </a>
-                
-            </div>
+                </div>
+            }
         </div>
-    }
-</div>
+    </div>
+    </section>
+
+

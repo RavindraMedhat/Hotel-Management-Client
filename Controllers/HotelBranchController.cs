@@ -46,7 +46,6 @@ namespace Hotel_Management_Client.Controllers
             if (HotelName == null)
             {
                 ViewBag.HotelName = HotelBranchs[0].Hotel_Name;
-
             }
             ViewBag.Hotel_ID = id;
 

@@ -27,10 +27,10 @@
                 <span asp-validation-for="Room_ID" class="text-danger"></span>
             </div>
             @*<div class="form-group">
-                    <label asp-for="Group_ID" class="control-label"></label>
-                    <input asp-for="Group_ID" class="form-control"  />
-                    <span asp-validation-for="Group_ID" class="text-danger"></span>
-                </div>*@
+            <label asp-for="Group_ID" class="control-label"></label>
+            <input asp-for="Group_ID" class="form-control"  />
+            <span asp-validation-for="Group_ID" class="text-danger"></span>
+        </div>*@
             <div class="form-group">
 
                 <input type="hidden" asp-for="Branch_ID" class="form-control" />
@@ -52,55 +52,57 @@
                 <span asp-validation-for="Booking_Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Payment_Status" class="control-label"></label>
-                <input asp-for="Payment_Status" class="form-control" />
-                <span asp-validation-for="Payment_Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Payed_Amount" class="control-label"></label>
-                <input asp-for="Payed_Amount" class="form-control" />
-                <span asp-validation-for="Payed_Amount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Payment_Mode" class="control-label"></label>
-                <input asp-for="Payment_Mode" class="form-control" />
-                <span asp-validation-for="Payment_Mode" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Coupon_Code" class="control-label"></label>
                 <input asp-for="Coupon_Code" class="form-control" />
                 <span asp-validation-for="Coupon_Code" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Booking_Status" class="control-label"></label>
-                <input asp-for="Booking_Status" class="form-control" />
-                <span asp-validation-for="Booking_Status" class="text-danger"></span>
+
+            @*<div class="form-group">
+                <label asp-for="Payment_Status" class="control-label"></label>*@
+                <input asp-for="Payment_Status" class="form-control" type="hidden" />
+                @*<span asp-validation-for="Payment_Status" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Discount" class="control-label"></label>
-                <input asp-for="Discount" class="form-control" />
-                <span asp-validation-for="Discount" class="text-danger"></span>
+                <label asp-for="Payed_Amount" class="control-label"></label>*@
+                <input asp-for="Payed_Amount" class="form-control" type="hidden" />
+                @*<span asp-validation-for="Payed_Amount" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Customer_status" class="control-label"></label>
-                <input asp-for="Customer_status" class="form-control" />
-                <span asp-validation-for="Customer_status" class="text-danger"></span>
+                <label asp-for="Payment_Mode" class="control-label"></label>*@
+                <input asp-for="Payment_Mode" class="form-control" type="hidden" />
+                @*<span asp-validation-for="Payment_Mode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking_Status" class="control-label"></label>*@
+                <input asp-for="Booking_Status" class="form-control" type="hidden" />
+                @*<span asp-validation-for="Booking_Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discount" class="control-label"></label>*@
+                <input asp-for="Discount" class="form-control" type="hidden" />
+                @*<span asp-validation-for="Discount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer_status" class="control-label"></label>*@
+                <input asp-for="Customer_status" class="form-control" type="hidden" />
+                @*<span asp-validation-for="Customer_status" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Active_Flag" /> @Html.DisplayNameFor(model => model.Active_Flag)
-                </label>
+                <label class="form-check-label">*@
+                    <input class="form-check-input" asp-for="Active_Flag"  type="hidden" />
+                @*</label>
             </div>
             <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Delete_Flag" /> @Html.DisplayNameFor(model => model.Delete_Flag)
-                </label>
+                <label class="form-check-label">*@
+                    <input class="form-check-input" asp-for="Delete_Flag"  type="hidden" /> 
+                @*</label>
             </div>
             <div class="form-group">
-                <label asp-for="Sortedfield" class="control-label"></label>
-                <input asp-for="Sortedfield" class="form-control" />
-                <span asp-validation-for="Sortedfield" class="text-danger"></span>
-            </div>
+                <label asp-for="Sortedfield" class="control-label"></label>*@
+                <input asp-for="Sortedfield" class="form-control" type="hidden" />
+                @*<span asp-validation-for="Sortedfield" class="text-danger"></span>
+            </div>*@
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

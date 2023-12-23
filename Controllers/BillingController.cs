@@ -158,7 +158,7 @@ namespace Hotel_Management_Client.Controllers
                     if (response.IsSuccessStatusCode)
                     {
                         data = JsonConvert.DeserializeObject<BillRes>(apiResponse);
-                        
+
                         var renderer = new IronPdf.ChromePdfRenderer();
 
                         using var pdf = renderer.RenderHtmlAsPdf(GenerateHtml(data));

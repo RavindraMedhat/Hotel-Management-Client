@@ -10,32 +10,38 @@
 
 <h1>Details</h1>
 
-<a asp-action="Create" asp-controller="Booking" asp-route-Rid="@Model.Room_ID" asp-route-Bid="@Model.Branch_ID">Booke Room </a>
+@*<a asp-action="Create" asp-controller="Booking" asp-route-Rid="@Model.Room_ID" asp-route-Bid="@Model.Branch_ID">Booke Room </a>*@
 <div class="row">
-    <div class="col-md-6 room-category" data-category="@Model.Category_Name">
-        <div class="card m-2" style="width: 18rem;">
+    <div class="col-5 room-category" data-category="@Model.Category_Name">
+        <div class="card m-2">
             <div class="card-header">
                 <h3>@Model.Room_No</h3>
             </div>
-            <img class="card-img-top card-body imageThumbnail" style="height: 200px;" src="@Model.Image_URl[0]" asp-append-version="true" />
+            <img class="card-img-top card-body imageThumbnail" style="height: 350px;" src="@Model.Image_URl[0]" asp-append-version="true" />
             <div class="card-footer text-center">
                 <h4>@Model.Category_Name</h4>
-                <dl class="row">
-                    <dt class="col-sm-6">@Html.DisplayNameFor(model => model.Room_Description)</dt>
-                    <dd class="col-sm-6">@Html.DisplayFor(model => model.Room_Description)</dd>
-
-                    <dt class="col-sm-6">@Html.DisplayNameFor(model => model.Room_Price)</dt>
-                    <dd class="col-sm-6">@Html.DisplayFor(model => model.Room_Price)</dd>
-
-                    <dt class="col-sm-6">@Html.DisplayNameFor(model => model.Iminity_Pool)</dt>
-                    <dd class="col-sm-6">@Html.DisplayFor(model => model.Iminity_Pool)</dd>
-
-                    <dt class="col-sm-6">@Html.DisplayNameFor(model => model.Iminity_Bath)</dt>
-                    <dd class="col-sm-6">@Html.DisplayFor(model => model.Iminity_Bath)</dd>
-
-                    <dt class="col-sm-6">@Html.DisplayNameFor(model => model.Iminity_NoOfBed)</dt>
-                    <dd class="col-sm-6">@Html.DisplayFor(model => model.Iminity_NoOfBed)</dd>
-                </dl>
+                <div class="">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <div class="col-sm-6">@Html.DisplayNameFor(model => model.Room_Description)</div>
+                        <div class="col-sm-6">@Html.DisplayFor(model => model.Room_Description)</div>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <div class="col-sm-6">@Html.DisplayNameFor(model => model.Room_Price)</div>
+                        <div class="col-sm-6">@Html.DisplayFor(model => model.Room_Price)</div>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <div class="col-sm-6">@Html.DisplayNameFor(model => model.Iminity_Pool)</div>
+                        <div class="col-sm-6">@Html.DisplayFor(model => model.Iminity_Pool)</div>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <div class="col-sm-6">@Html.DisplayNameFor(model => model.Iminity_Bath)</div>
+                        <div class="col-sm-6">@Html.DisplayFor(model => model.Iminity_Bath)</div>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                        <div class="col-sm-6">@Html.DisplayNameFor(model => model.Iminity_NoOfBed)</div>
+                        <div class="col-sm-6">@Html.DisplayFor(model => model.Iminity_NoOfBed)</div>
+                    </div>           
+                </div>
             </div>
 
             <div class="card-footer text-center">

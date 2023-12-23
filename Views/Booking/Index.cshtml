@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Hotel_Management_Client.ViewModel.BookingForDetail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Customer_Name)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Room_No)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hotel_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch_name)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Group_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booking_Date)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Check_In_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Check_Out_Date)
+            </th>
+            @*<th>
+                @html.displaynamefor(model => model.payment_status)
+            </th>
+            <th>
+                @html.displaynamefor(model => model.payed_amount)
+            </th>
+            <th>
+                @html.displaynamefor(model => model.payment_mode)
+            </th>
+            <th>
+                @html.displaynamefor(model => model.coupon_code)
+            </th>
+            <th>
+                @html.displaynamefor(model => model.booking_status)
+            </th>
+            <th>
+                @html.displaynamefor(model => model.discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_status)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Customer_Name)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Room_No)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hotel_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch_name)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Group_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Booking_Date)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Check_In_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Check_Out_Date)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Payment_Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payed_Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payment_Mode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coupon_Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Booking_Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer_status)
+            </td>*@
+            <td>
+                 | @Html.ActionLink("Details", "Details", new { id = item.booking_id }) |
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

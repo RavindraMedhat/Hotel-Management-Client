@@ -27,25 +27,35 @@ namespace Hotel_Management_Client.Controllers
             
         }
         // GET: BookingController
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View();
+            int id = (int)(HttpContext.Session.GetInt32("UID") == null ? 0 : HttpContext.Session.GetInt32("UID"));
+
+            List<BookingForDetail> booking;
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync(API_Booking + "/getBookingByUid/" + id))
+                {
+                    var apiresponse = await response.Content.ReadAsStringAsync();
+                    booking = JsonConvert.DeserializeObject<List<BookingForDetail>>(apiresponse);
+                }
+            }
+            return View(booking);
         }
 
         // GET: BookingController/Details/5
         public async Task<ActionResult> Details(int id)
         {
-            Booking booking;
+            BookingForDetail booking;
             using (var httpClient = new HttpClient())
             {
                 using (var response = await httpClient.GetAsync(API_Booking + "/" + id))
                 {
                     var apiresponse = await response.Content.ReadAsStringAsync();
-                    booking = JsonConvert.DeserializeObject<Booking>(apiresponse);
+                    booking = JsonConvert.DeserializeObject<BookingForDetail>(apiresponse);
                 }
             }
             return View(booking);
-            return View();
         }
 
         // GET: BookingController/Create
@@ -77,9 +87,6 @@ namespace Hotel_Management_Client.Controllers
                 }
             }
 
-
-
-
             return View(booking);
         }
 
@@ -90,6 +97,10 @@ namespace Hotel_Management_Client.Controllers
         {
             try
             {
+                collection.Payed_Amount = 0;
+                collection.Discount = 0;
+                collection.Sortedfield = 99;
+
                 if (collection.Check_In_Date.Date > collection.Check_Out_Date.Date || collection.Check_Out_Date.Date < DateTime.Now.Date || collection.Check_In_Date.Date < DateTime.Now.Date)
                 {
                     ViewBag.Errormessage = "Invalid Check in / check out date";
