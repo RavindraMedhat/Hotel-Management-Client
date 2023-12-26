@@ -40,6 +40,7 @@ namespace Hotel_Management_Client.Controllers
                     booking = JsonConvert.DeserializeObject<List<BookingForDetail>>(apiresponse);
                 }
             }
+
             return View(booking);
         }
 

@@ -22,7 +22,17 @@
                         </a>
                         <div class="ri-text">
                             <h4>@hotel.Branch_Name</h4>
+                            
                             <a asp-controller="Room" asp-action="Index" asp-route-id="@hotel.Branch_ID" asp-route-HotelName="@hotel.Branch_Name">More Details</a>
+                        </div>
+                        <div>
+                            <h4 style="text-align:center">
+                                Address
+                            </h4>
+
+                                <h5 style="text-align:center">
+                                    @hotel.Address
+                                </h5>
                         </div>
                     </div>
                 </div>

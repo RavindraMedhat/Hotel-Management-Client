@@ -82,6 +82,18 @@
                 .room-item .ri-text .primary-btn {
                     color: #19191a;
                 }
+    .tab-container {
+        display: flex;
+        gap: 10px; /* Adjust the space between tabs as needed */
+    }
+
+    .tab {
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+        background-color: #007bff; /* Adjust the background color as needed */
+        border-radius: 5px;
+    }
 
 </style>
 <body class="abc">
@@ -106,8 +118,12 @@
             </div>
             @if (httpContext.Session.GetString("Email") != null && httpContext.Session.GetString("Role") != null && httpContext.Session.GetString("Redirect") != null && httpContext.Session.GetString("RedirctID") != null)
             {
-                <a asp-action="Logout" asp-controller="UserRegistration" class="btn btn-primary">LogOut</a>
+                <div class="tab-container">
 
+                <a asp-action="Index" asp-controller="Booking" class="btn btn-primary"  class="tab" >My Booking</a>  
+                <a asp-action="Logout" asp-controller="UserRegistration" class="btn btn-primary"  class="tab">LogOut</a>
+
+                </div>
             }
             else
             {
